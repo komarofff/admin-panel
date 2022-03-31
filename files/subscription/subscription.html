@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subscription</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        #top-section, #left-section, #main-section {
+            /*border: 1px solid red;*/
+        }
+    </style>
+</head>
+<body class="light-theme">
+<section class="container-fluid  h-full">
+    <div id="top-section" class="row width-full position-fixed top-0 left-0 right-0 border-bottom-1">
+        <div class="col-12 d-flex justify-content-between align-items-center  px-2 px-md-3 py-2">
+            <div class="col-8 col-sm-6">
+                <img class="mobile-menu-start pointer" src="../images/burger-menu.svg" alt="mobile-menu-start">
+                <a class="ms-2 ms-md-3" href="#"> <img class="logo  position-relative top-0 start-0"
+                                                       src="../images/logo.svg" alt="logo"></a>
+            </div>
+            <div class="col-4  col-sm-6 d-flex justify-content-end">
+                <img class="d-none d-sm-block  pointer" src="../images/question.svg" alt="">
+                <img class="ms-2 ms-md-4  pointer" src="../images/ring.svg" alt="">
+                <div class="ms-2 ms-md-4  position-relative show-user-menu">
+                    <div class="user-photo-top-menu d-flex justify-content-center align-items-center">
+                        <img class="user-image-top-menu" src="../images/user-photo-top-menu.png" alt="">
+                    </div>
+
+                    <div class="position-absolute user-menu modal-block ">
+                        <p class="px-3 red text-lg">John Snow</p>
+                        <p class="px-3 text-color-light-black">johnsnow@gmail.com</p>
+                        <p class="col-12 stripe-gray my-3"></p>
+                        <p class="px-3 text-lg">Profile settings</p>
+                        <div class="d-flex justify-content-between align-items-center px-3">
+                            <p class=" text-lg mb-0">Dark theme</p>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" checked>
+                            </div>
+                        </div>
+                        <p class="col-12 stripe-gray my-3"></p>
+                        <p class="px-3 text-lg">Log out</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row min-h-100 pt-10 position-fixed top-0 left-0 right-0 width-full">
+        <div id="left-section" class=" col-lg-2 col-xl-2 col-xxl-2 mobile-menu d-lg-flex  px-0 py-4 block-shadow ">
+            <!--            <img class="d-block d-lg-none close-mobile-menu position-absolute" src="../images/close.svg"-->
+            <!--                 alt="close menu">-->
+            <div class="align-self-stretch d-flex flex-column justify-content-around align-items-start min-h-100 width-full ">
+
+                <a class="w-100" href="">
+                    <div class="d-flex align-items-center mb-4 mt-4 left-menu-link">
+                        <svg  class="me-3 left-m-image" width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.6128 14.939L22.0709 16.3971L22.4483 10.9163L16.9674 11.2937L18.462 12.7883C16.3698 14.8805 14.322 15.7618 12 15.532C14.2411 16.9362 17.3191 17.5036 20.6128 14.939Z" fill="#383B3C"/>
+                            <mask id="path-2-inside-1_1661_6800" fill="white">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2V4H8V2H12ZM2 17V6H18V10H20V6C20 4.89 19.11 4 18 4H14V2C14 0.89 13.11 0 12 0H8C6.89 0 6 0.89 6 2V4H2C0.89 4 0.00999999 4.89 0.00999999 6L0 17C0 18.11 0.89 19 2 19H13V17H2Z"/>
+                            </mask>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2V4H8V2H12ZM2 17V6H18V10H20V6C20 4.89 19.11 4 18 4H14V2C14 0.89 13.11 0 12 0H8C6.89 0 6 0.89 6 2V4H2C0.89 4 0.00999999 4.89 0.00999999 6L0 17C0 18.11 0.89 19 2 19H13V17H2Z" fill="#383B3C"/>
+                            <path d="M12 4V5H13V4H12ZM12 2H13V1H12V2ZM8 4H7V5H8V4ZM8 2V1H7V2H8ZM2 6V5H1V6H2ZM2 17H1V18H2V17ZM18 6H19V5H18V6ZM18 10H17V11H18V10ZM20 10V11H21V10H20ZM14 4H13V5H14V4ZM6 4V5H7V4H6ZM0.00999999 6L1.01 6.00091V6H0.00999999ZM0 17L-1 16.9991V17H0ZM13 19V20H14V19H13ZM13 17H14V16H13V17ZM13 4V2H11V4H13ZM8 5H12V3H8V5ZM7 2V4H9V2H7ZM12 1H8V3H12V1ZM1 6V17H3V6H1ZM18 5H2V7H18V5ZM19 10V6H17V10H19ZM18 11H20V9H18V11ZM19 6V10H21V6H19ZM18 5C18.5577 5 19 5.44228 19 6H21C21 4.33772 19.6623 3 18 3V5ZM14 5H18V3H14V5ZM13 2V4H15V2H13ZM12 1C12.5577 1 13 1.44228 13 2H15C15 0.337715 13.6623 -1 12 -1V1ZM8 1H12V-1H8V1ZM7 2C7 1.44228 7.44228 1 8 1V-1C6.33772 -1 5 0.337715 5 2H7ZM7 4V2H5V4H7ZM2 5H6V3H2V5ZM1.01 6C1.01 5.43573 1.44882 5 2 5V3C0.331179 3 -0.99 4.34427 -0.99 6H1.01ZM1 17.0009L1.01 6.00091L-0.99 5.99909L-1 16.9991L1 17.0009ZM2 18C1.44228 18 1 17.5577 1 17H-1C-1 18.6623 0.337715 20 2 20V18ZM13 18H2V20H13V18ZM14 19V17H12V19H14ZM2 18H13V16H2V18Z" fill="#383B3C" mask="url(#path-2-inside-1_1661_6800)"/>
+                        </svg>
+
+                        <p class="text-base weight-500 mb-0 dark-black">Gaps</p>
+                    </div>
+                </a>
+
+                <p class="mt-2 mb-3 text-base weight-500 gray-black upper ms-4">Analyze</p>
+                <span class="mt-0 mb-0 col-12 stripe-gray d-none"></span>
+
+                <div class="d-flex flex-column justify-content-around align-items-start  width-full align-self-stretch h-50">
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg class="me-3 left-m-image" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.5 4.58333V6.41667H12.8334V4.58333H16.5ZM7.33337 4.58333V10.0833H3.66671V4.58333H7.33337ZM16.5 11.9167V17.4167H12.8334V11.9167H16.5ZM7.33337 15.5833V17.4167H3.66671V15.5833H7.33337ZM18.3334 2.75H11V8.25H18.3334V2.75ZM9.16671 2.75H1.83337V11.9167H9.16671V2.75ZM18.3334 10.0833H11V19.25H18.3334V10.0833ZM9.16671 13.75H1.83337V19.25H9.16671V13.75Z" fill="#383B3C"/>
+                            </svg>
+                            <p class="text-base weight-400 mb-0 dark-black">Dashboard</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg  class="me-3 left-m-image" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.68328 1.68733L7.68328 9.45004V10.2H8.43328H16.081C15.9592 11.4799 15.5271 12.7131 14.8191 13.7874C13.9736 15.0703 12.7729 16.0686 11.3702 16.6577C9.9675 17.2467 8.42466 17.4007 6.93629 17.1005C5.44786 16.8004 4.07922 16.0592 3.00401 14.9691C1.9287 13.8789 1.19526 12.4887 0.898016 10.9737C0.600764 9.4586 0.753413 7.8883 1.33624 6.46177C1.91903 5.03533 2.90526 3.81779 4.16864 2.96195C5.22276 2.24786 6.43064 1.81206 7.68328 1.68733ZM10.3167 0.787251C11.0671 0.861972 11.8041 1.04858 12.5036 1.34233C13.435 1.73348 14.2821 2.30709 14.996 3.0309C15.7099 3.75473 16.2768 4.61461 16.6638 5.56169C16.9561 6.27712 17.1413 7.03156 17.2144 7.79996H10.3167L10.3167 0.787251Z" stroke="#383B3C" stroke-width="1.5"/>
+                            </svg>
+                            <p class="text-base weight-400 mb-0 dark-black">Summary</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg class="me-3 left-m-image" width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.4 7.7C3.94437 7.7 3.575 8.06937 3.575 8.525C3.575 8.98063 3.94437 9.35 4.4 9.35H13.2C13.6556 9.35 14.025 8.98063 14.025 8.525C14.025 8.06937 13.6556 7.7 13.2 7.7H4.4Z" fill="#383B3C"/>
+                                <path d="M7.975 12.925C7.975 12.4694 8.34437 12.1 8.8 12.1H13.2C13.6556 12.1 14.025 12.4694 14.025 12.925C14.025 13.3806 13.6556 13.75 13.2 13.75H8.8C8.34437 13.75 7.975 13.3806 7.975 12.925Z" fill="#383B3C"/>
+                                <path d="M6.6 16.5C6.14437 16.5 5.775 16.8694 5.775 17.325C5.775 17.7806 6.14437 18.15 6.6 18.15H13.2C13.6556 18.15 14.025 17.7806 14.025 17.325C14.025 16.8694 13.6556 16.5 13.2 16.5H6.6Z" fill="#383B3C"/>
+                                <path d="M13.1848 2.19938C13.0477 0.962195 11.9987 0 10.725 0H6.875C5.60126 0 4.55225 0.962195 4.41517 2.19938L2.475 2.2C1.1081 2.2 0 3.3081 0 4.675V19.525C0 20.8919 1.1081 22 2.475 22H15.125C16.4919 22 17.6 20.8919 17.6 19.525V4.675C17.6 3.3081 16.4919 2.2 15.125 2.2L13.1848 2.19938ZM13.1943 2.30555L13.2 2.475C13.2 2.41805 13.1981 2.36154 13.1943 2.30555ZM6.875 4.95H10.725C11.583 4.95 12.3391 4.51337 12.7831 3.85018L15.125 3.85C15.5806 3.85 15.95 4.21937 15.95 4.675V19.525C15.95 19.9806 15.5806 20.35 15.125 20.35H2.475C2.01937 20.35 1.65 19.9806 1.65 19.525V4.675C1.65 4.21937 2.01937 3.85 2.475 3.85L4.81692 3.85022C5.26093 4.51341 6.01696 4.95 6.875 4.95ZM6.875 1.65H10.725C11.1806 1.65 11.55 2.01937 11.55 2.475C11.55 2.93063 11.1806 3.3 10.725 3.3H6.875C6.41936 3.3 6.05 2.93063 6.05 2.475C6.05 2.01937 6.41936 1.65 6.875 1.65Z" fill="#383B3C"/>
+                            </svg>
+
+                            <p class="text-base weight-400 mb-0 dark-black">Reports</p>
+                        </div>
+                    </a>
+                </div>
+
+                <p class="mt-2 mb-3 text-base weight-500 gray-black upper ms-4">Manage</p>
+                <span class="mt-0 mb-0 col-12 stripe-gray d-none"></span>
+
+                <div class="d-flex flex-column justify-content-around align-items-start  width-full align-self-stretch h-100">
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg  class="me-3 left-m-image" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 7C8.93 7 10.5 5.43 10.5 3.5C10.5 1.57 8.93 0 7 0C5.07 0 3.5 1.57 3.5 3.5C3.5 5.43 5.07 7 7 7ZM7 2C7.83 2 8.5 2.67 8.5 3.5C8.5 4.33 7.83 5 7 5C6.17 5 5.5 4.33 5.5 3.5C5.5 2.67 6.17 2 7 2ZM7.05 12H2.77C3.76 11.5 5.47 11 7 11C7.11 11 7.23 11.01 7.34 11.01C7.68 10.28 8.27 9.68 8.98 9.2C8.25 9.07 7.56 9 7 9C4.66 9 0 10.17 0 12.5V14H7V12.5C7 12.33 7.02 12.16 7.05 12ZM14.5 9.5C12.66 9.5 9 10.51 9 12.5V14H20V12.5C20 10.51 16.34 9.5 14.5 9.5ZM15.71 7.68C16.47 7.25 17 6.44 17 5.5C17 4.12 15.88 3 14.5 3C13.12 3 12 4.12 12 5.5C12 6.44 12.53 7.25 13.29 7.68C13.65 7.88 14.06 8 14.5 8C14.94 8 15.35 7.88 15.71 7.68Z" fill="#383B3C"/>
+                            </svg>
+                            <p class="text-base weight-400 mb-0 dark-black">Accounts</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg  class="me-3 left-m-image" width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="path-1-inside-1_1661_6851" fill="white">
+                                    <path d="M10.5379 3.51262V1.75631H7.02525V3.51262H10.5379ZM1.75631 5.26894V14.9286H15.8068V5.26894H1.75631ZM15.8068 3.51262C16.7816 3.51262 17.5631 4.29418 17.5631 5.26894V14.9286C17.5631 15.9034 16.7816 16.685 15.8068 16.685H1.75631C0.781559 16.685 0 15.9034 0 14.9286L0.00878155 5.26894C0.00878155 4.29418 0.781559 3.51262 1.75631 3.51262H5.26894V1.75631C5.26894 0.781559 6.05049 0 7.02525 0H10.5379C11.5126 0 12.2942 0.781559 12.2942 1.75631V3.51262H15.8068Z"/>
+                                </mask>
+                                <path d="M10.5379 3.51262V1.75631H7.02525V3.51262H10.5379ZM1.75631 5.26894V14.9286H15.8068V5.26894H1.75631ZM15.8068 3.51262C16.7816 3.51262 17.5631 4.29418 17.5631 5.26894V14.9286C17.5631 15.9034 16.7816 16.685 15.8068 16.685H1.75631C0.781559 16.685 0 15.9034 0 14.9286L0.00878155 5.26894C0.00878155 4.29418 0.781559 3.51262 1.75631 3.51262H5.26894V1.75631C5.26894 0.781559 6.05049 0 7.02525 0H10.5379C11.5126 0 12.2942 0.781559 12.2942 1.75631V3.51262H15.8068Z" fill="#383B3C"/>
+                                <path d="M10.5379 3.51262V4.51262H11.5379V3.51262H10.5379ZM10.5379 1.75631H11.5379V0.756312H10.5379V1.75631ZM7.02525 1.75631V0.756312H6.02525V1.75631H7.02525ZM7.02525 3.51262H6.02525V4.51262H7.02525V3.51262ZM1.75631 5.26894V4.26894H0.756312V5.26894H1.75631ZM1.75631 14.9286H0.756312V15.9286H1.75631V14.9286ZM15.8068 14.9286V15.9286H16.8068V14.9286H15.8068ZM15.8068 5.26894H16.8068V4.26894H15.8068V5.26894ZM0 14.9286L-1 14.9277V14.9286H0ZM0.00878155 5.26894L1.00878 5.26984V5.26894H0.00878155ZM5.26894 3.51262V4.51262H6.26894V3.51262H5.26894ZM12.2942 3.51262H11.2942V4.51262H12.2942V3.51262ZM11.5379 3.51262V1.75631H9.53787V3.51262H11.5379ZM10.5379 0.756312H7.02525V2.75631H10.5379V0.756312ZM6.02525 1.75631V3.51262H8.02525V1.75631H6.02525ZM7.02525 4.51262H10.5379V2.51262H7.02525V4.51262ZM0.756312 5.26894V14.9286H2.75631V5.26894H0.756312ZM1.75631 15.9286H15.8068V13.9286H1.75631V15.9286ZM16.8068 14.9286V5.26894H14.8068V14.9286H16.8068ZM15.8068 4.26894H1.75631V6.26894H15.8068V4.26894ZM15.8068 4.51262C16.2293 4.51262 16.5631 4.84647 16.5631 5.26894H18.5631C18.5631 3.7419 17.3338 2.51262 15.8068 2.51262V4.51262ZM16.5631 5.26894V14.9286H18.5631V5.26894H16.5631ZM16.5631 14.9286C16.5631 15.3511 16.2293 15.685 15.8068 15.685V17.685C17.3338 17.685 18.5631 16.4557 18.5631 14.9286H16.5631ZM15.8068 15.685H1.75631V17.685H15.8068V15.685ZM1.75631 15.685C1.33384 15.685 1 15.3511 1 14.9286H-1C-1 16.4557 0.229274 17.685 1.75631 17.685V15.685ZM1 14.9296L1.00878 5.26984L-0.991218 5.26803L-1 14.9277L1 14.9296ZM1.00878 5.26894C1.00878 4.83991 1.34038 4.51262 1.75631 4.51262V2.51262C0.222738 2.51262 -0.991218 3.74846 -0.991218 5.26894H1.00878ZM1.75631 4.51262H5.26894V2.51262H1.75631V4.51262ZM6.26894 3.51262V1.75631H4.26894V3.51262H6.26894ZM6.26894 1.75631C6.26894 1.33384 6.60278 1 7.02525 1V-1C5.49821 -1 4.26894 0.229274 4.26894 1.75631H6.26894ZM7.02525 1H10.5379V-1H7.02525V1ZM10.5379 1C10.9603 1 11.2942 1.33384 11.2942 1.75631H13.2942C13.2942 0.229274 12.0649 -1 10.5379 -1V1ZM11.2942 1.75631V3.51262H13.2942V1.75631H11.2942ZM12.2942 4.51262H15.8068V2.51262H12.2942V4.51262Z" fill="#383B3C" mask="url(#path-1-inside-1_1661_6851)"/>
+                            </svg>
+                            <p class="text-base weight-400 mb-0 dark-black">Opportunities</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg class="me-3 left-m-image" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.7 3.4H3.4V5.95H11.9V3.4H13.6V7.65H15.3V3.4C15.3 2.465 14.535 1.7 13.6 1.7H10.047C9.69 0.714 8.755 0 7.65 0C6.545 0 5.61 0.714 5.253 1.7H1.7C0.765 1.7 0 2.465 0 3.4V15.3C0 16.235 0.765 17 1.7 17H6.8V15.3H1.7V3.4ZM7.65 1.7C8.1175 1.7 8.5 2.0825 8.5 2.55C8.5 3.0175 8.1175 3.4 7.65 3.4C7.1825 3.4 6.8 3.0175 6.8 2.55C6.8 2.0825 7.1825 1.7 7.65 1.7Z" fill="#383B3C"/>
+                                <path d="M15.6128 12.9388L17.0709 14.3969L17.4483 8.91604L11.9674 9.29343L13.462 10.788C11.3698 12.8802 9.32199 13.7615 7.00002 13.5318C9.24112 14.936 12.3191 15.5033 15.6128 12.9388Z" fill="#383B3C"/>
+                            </svg>
+                            <p class="text-base weight-400 mb-0 dark-black">Gap Details</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg  class="me-3 left-m-image" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.469 10.622L11.369 2.522C11.045 2.198 10.595 2 10.1 2H3.8C2.81 2 2 2.81 2 3.8V10.1C2 10.595 2.198 11.045 2.531 11.378L10.631 19.478C10.955 19.802 11.405 20 11.9 20C12.395 20 12.845 19.802 13.169 19.469L19.469 13.169C19.802 12.845 20 12.395 20 11.9C20 11.405 19.793 10.946 19.469 10.622ZM11.9 18.209L3.8 10.1V3.8H10.1V3.791L18.2 11.891L11.9 18.209Z" fill="#383B3C"/>
+                                <path d="M6 7C6.55228 7 7 6.55228 7 6C7 5.44772 6.55228 5 6 5C5.44772 5 5 5.44772 5 6C5 6.55228 5.44772 7 6 7Z" fill="#383B3C"/>
+                            </svg>
+                            <p class="text-base weight-400 mb-0 dark-black">Tags</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg  class="me-3 left-m-image" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 2C9.1 2 10 2.9 10 4C10 5.1 9.1 6 8 6C6.9 6 6 5.1 6 4C6 2.9 6.9 2 8 2ZM8 11C10.7 11 13.8 12.29 14 13V14H2V13.01C2.2 12.29 5.3 11 8 11ZM8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0ZM8 9C5.33 9 0 10.34 0 13V16H16V13C16 10.34 10.67 9 8 9Z" fill="#383B3C"/>
+                            </svg>
+
+                            <p class="text-base weight-400 mb-0 dark-black">Users</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link">
+                            <svg class="me-3 left-m-image"  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.8108 11.8984C17.8475 11.605 17.875 11.3117 17.875 11C17.875 10.6884 17.8475 10.395 17.8108 10.1017L19.745 8.58921C19.9191 8.45171 19.965 8.20421 19.855 8.00254L18.0216 4.83087C17.9391 4.68421 17.7833 4.60171 17.6183 4.60171C17.5633 4.60171 17.5083 4.61087 17.4625 4.62921L15.18 5.54587C14.7033 5.17921 14.19 4.87671 13.6308 4.64754L13.2825 2.21837C13.255 1.99837 13.0625 1.83337 12.8333 1.83337H9.16664C8.93747 1.83337 8.74497 1.99837 8.71747 2.21837L8.36914 4.64754C7.80997 4.87671 7.29664 5.18837 6.81997 5.54587L4.53747 4.62921C4.48247 4.61087 4.42747 4.60171 4.37247 4.60171C4.21664 4.60171 4.06081 4.68421 3.97831 4.83087L2.14497 8.00254C2.02581 8.20421 2.08081 8.45171 2.25497 8.58921L4.18914 10.1017C4.15247 10.395 4.12497 10.6975 4.12497 11C4.12497 11.3025 4.15247 11.605 4.18914 11.8984L2.25497 13.4109C2.08081 13.5484 2.03497 13.7959 2.14497 13.9975L3.97831 17.1692C4.06081 17.3159 4.21664 17.3984 4.38164 17.3984C4.43664 17.3984 4.49164 17.3892 4.53747 17.3709L6.81997 16.4542C7.29664 16.8209 7.80997 17.1234 8.36914 17.3525L8.71747 19.7817C8.74497 20.0017 8.93747 20.1667 9.16664 20.1667H12.8333C13.0625 20.1667 13.255 20.0017 13.2825 19.7817L13.6308 17.3525C14.19 17.1234 14.7033 16.8117 15.18 16.4542L17.4625 17.3709C17.5175 17.3892 17.5725 17.3984 17.6275 17.3984C17.7833 17.3984 17.9391 17.3159 18.0216 17.1692L19.855 13.9975C19.965 13.7959 19.9191 13.5484 19.745 13.4109L17.8108 11.8984ZM15.9958 10.3309C16.0325 10.615 16.0416 10.8075 16.0416 11C16.0416 11.1925 16.0233 11.3942 15.9958 11.6692L15.8675 12.705L16.6833 13.3467L17.6733 14.1167L17.0316 15.2259L15.8675 14.7584L14.9141 14.3734L14.0891 14.9967C13.695 15.29 13.3191 15.51 12.9433 15.6659L11.9716 16.06L11.825 17.0959L11.6416 18.3334H10.3583L10.1841 17.0959L10.0375 16.06L9.06581 15.6659C8.67164 15.5009 8.30497 15.29 7.93831 15.015L7.10414 14.3734L6.13247 14.7675L4.96831 15.235L4.32664 14.1259L5.31664 13.3559L6.13247 12.7142L6.00414 11.6784C5.97664 11.3942 5.95831 11.1834 5.95831 11C5.95831 10.8167 5.97664 10.6059 6.00414 10.3309L6.13247 9.29504L5.31664 8.65337L4.32664 7.88338L4.96831 6.77421L6.13247 7.24171L7.08581 7.62671L7.91081 7.00337C8.30497 6.71004 8.68081 6.49004 9.05664 6.33421L10.0283 5.94004L10.175 4.90421L10.3583 3.66671H11.6325L11.8066 4.90421L11.9533 5.94004L12.925 6.33421C13.3191 6.49921 13.6858 6.71004 14.0525 6.98504L14.8866 7.62671L15.8583 7.23254L17.0225 6.76504L17.6641 7.87421L16.6833 8.65337L15.8675 9.29504L15.9958 10.3309ZM11 7.33337C8.97414 7.33337 7.33331 8.97421 7.33331 11C7.33331 13.0259 8.97414 14.6667 11 14.6667C13.0258 14.6667 14.6666 13.0259 14.6666 11C14.6666 8.97421 13.0258 7.33337 11 7.33337ZM11 12.8334C9.99164 12.8334 9.16664 12.0084 9.16664 11C9.16664 9.99171 9.99164 9.16671 11 9.16671C12.0083 9.16671 12.8333 9.99171 12.8333 11C12.8333 12.0084 12.0083 12.8334 11 12.8334Z" fill="#383B3C"/>
+                            </svg>
+
+                            <p class="text-base weight-400 mb-0 dark-black">Settings</p>
+                        </div>
+                    </a>
+                    <a class="w-100" href="">
+                        <div class="d-flex align-items-center mb-special-left left-menu-link active-left-menu-link">
+                            <svg  class="me-3 left-m-image"  width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.15 1.65L16.5 0L14.85 1.65L13.2 0L11.55 1.65L9.9 0L8.25 1.65L6.6 0L4.95 1.65L3.3 0V15.4H0V18.7C0 20.526 1.474 22 3.3 22H16.5C18.326 22 19.8 20.526 19.8 18.7V0L18.15 1.65ZM13.2 19.8H3.3C2.695 19.8 2.2 19.305 2.2 18.7V17.6H13.2V19.8ZM17.6 18.7C17.6 19.305 17.105 19.8 16.5 19.8C15.895 19.8 15.4 19.305 15.4 18.7V15.4H5.5V3.3H17.6V18.7Z" fill="#383B3C"/>
+                                <path d="M11.7608 8.7449C10.5343 8.4204 10.1399 8.0849 10.1399 7.5624C10.1399 6.9629 10.6856 6.5449 11.5987 6.5449C12.5604 6.5449 12.9169 7.0124 12.9494 7.6999H14.1434C14.1055 6.7539 13.5383 5.8849 12.4091 5.6044V4.3999H10.7883V5.5879C9.74013 5.8189 8.8973 6.5119 8.8973 7.5734C8.8973 8.8439 9.92922 9.4764 11.4366 9.8449C12.7873 10.1749 13.0574 10.6589 13.0574 11.1704C13.0574 11.5499 12.7927 12.1549 11.5987 12.1549C10.4857 12.1549 10.0481 11.6489 9.98865 10.9999H8.80005C8.86488 12.2044 9.75093 12.8809 10.7883 13.1064V14.2999H12.4091V13.1174C13.4626 12.9139 14.3 12.2924 14.3 11.1649C14.3 9.6029 12.9872 9.0694 11.7608 8.7449Z" fill="#383B3C"/>
+                            </svg>
+
+                            <p class="text-base weight-400 mb-0 dark-black">Subscription</p>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="main-section"
+             class="col-12 col-lg-10 col-xl-10 col-xxl-10 px-2 px-lg-3  py-2 py-md-4 position-relative grow-2">
+            <div class="black-background d-none"></div>
+            <div class="inner-section ps-1 ps-md-4 pe-2 pe-md-4">
+                <p class="text-xl dark-black mt-3 weight-500 ">Subscriptions</p>
+                <div class="col-12 w-full d-flex justify-content-start align-items-center mt-4 tabs-menu">
+                    <p class="text-base-big weight-400 mb-0 pb-3 me-4 text-color-light-black pointer active-tabs-title tab-title">
+                        Payment</p>
+                    <p class="text-base-big weight-400 mb-0 pb-3 me-4 text-color-light-black pointer tab-title">
+                        Invoice</p>
+                    <p class="text-base-big weight-400 mb-0 pb-3 me-4 text-color-light-black pointer tab-title">
+                        Plans</p>
+                </div>
+                <div class="stripe-gray mb-4"></div>
+
+                <div class="ms-1 w-full row col-12 tab-content active-tab px-0 mx-0 mb-3">
+                    <div class=" box pt-3  ps-0 pe-0">
+                        <div class="col-12 d-flex justify-content-between align-items-center px-3 flex-wrap flex-md-nowrap">
+                            <div class="col-12 col-md-4">
+                                <p class="text-base-big weight-500">Current Plan</p>
+                                <p class=" weight-400 text-color-light-black">
+                                    <span class="blue text-lg upper ">Standard </span>
+                                    <span class="text-small ms-1">(annual billing)</span>
+                                </p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <p class="mb-0 mb-md-2">
+                                    <span class="text-xl weight-600 ">$ 65.88</span>
+                                    <span class="text-base-big weight-400">per seat/ year</span>
+                                </p>
+                                <p class="text-small ms-1">Next billing date (11/08/2022)</p>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-danger">Upgrade Plan</button>
+                            </div>
+                        </div>
+
+                        <div class="col-12 stripe-gray mt-3 mb-4  px-3"></div>
+
+                        <div class="col-12 d-flex justify-content-between align-items-center  px-3">
+                            <p class="text-small ms-1 dark-black"><span>User Seats (1)</span> <img
+                                    src="../images/info-gray.svg" alt="info"></p>
+                            <p class="text-base weight-400 dark-black"><span class="pointer">Remove / </span> <span
+                                    class="red ms-1 pointer open-seats-modal">Add</span></p>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-between align-items-center  px-3">
+                            <div class="col-9 stripe-red"></div>
+                            <div class="col-3"><p class="text-small ms-1 text-color-light-black text-end">1 of 1
+                                used</p></div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-between align-items-center bg-gray mt-4 px-3">
+                            <p class="text-base-big ms-1 dark-black pb-3 mb-0 pt-3 weight-500">Total Yearly Price</p>
+                            <p class="text-xl ms-1 dark-black pb-3 mb-0 pt-3 weight-600">$ 65.88</p>
+                        </div>
+
+                    </div>
+                    <div class="col-12 d-flex justify-content-between ps-0 pe-0 flex-wrap flex-md-nowrap">
+                        <div class="col-12 col-md-6 mt-4 ms-0 ps-0 pe-md-4 pe-0 align-self-stretch ">
+                            <div class="box">
+                                <p class="d-flex justify-content-between align-items-center ps-3 pt-3 pe-3 pb-0">
+                                    <span class="text-base-big weight-500 mb-0">Invoice Information</span>
+                                    <span class="red weight-500 pointer mb-0 open-edit-invoice-modal">Edit</span>
+                                </p>
+                                <div class="stripe-gray my-2"></div>
+
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Company name</p>
+                                    <p class="text-base dark-black weight-400 mb-0">Amazing Software Company, Ltd.</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Send emails to</p>
+                                    <p class="text-base dark-black weight-400 mb-0">email@domain.com</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Country</p>
+                                    <p class="text-base dark-black weight-400 mb-0">USA</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Address</p>
+                                    <p class="text-base dark-black weight-400 mb-0">Amazing Software Company, Ltd.</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">City</p>
+                                    <p class="text-base dark-black weight-400 mb-0">Dallas</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">State / Province</p>
+                                    <p class="text-base dark-black weight-400 mb-0">Texas</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">ZIP / Postal code</p>
+                                    <p class="text-base dark-black weight-400 mb-0">3000</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Tax ID</p>
+                                    <p class="text-base dark-black weight-400 mb-0">40161625789</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 me-0 pe-0 ps-0 ps-md-4 align-self-stretch">
+                            <div class="box">
+                                <p class="d-flex justify-content-between align-items-center ps-3 pt-3 pe-3 pb-0">
+                                    <span class="text-base-big weight-500 mb-0">Payment information</span>
+                                    <span class="red weight-500 pointer mb-0 open-edit-payment-modal">Edit</span>
+                                </p>
+                                <div class="stripe-gray my-2"></div>
+
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Visa</p>
+                                    <p class="text-base dark-black weight-400 mb-0">************8238</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Expiration date</p>
+                                    <p class="text-base dark-black weight-400 mb-0">2/2030</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Card holder</p>
+                                    <p class="text-base dark-black weight-400 mb-0">Russel Peters</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Street</p>
+                                    <p class="text-base dark-black weight-400 mb-0">2325 Viewcrest Dr</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">ZIP / Postal code</p>
+                                    <p class="text-base dark-black weight-400 mb-0">37922</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">State / Province</p>
+                                    <p class="text-base dark-black weight-400 mb-0">Texas</p>
+                                </div>
+                                <div class="py-2 px-3 w-full my-2">
+                                    <p class="text-small mb-2 text-color-base weight-300">Country</p>
+                                    <p class="text-base dark-black weight-400 mb-0">USA</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ms-1 w-full row col-12 tab-content ">
+                    <div class=" table-bordered table-rounded px-0">
+                        <div class="col-12 bg-gray-table px-2 py-3">
+                            <p class="text-color-light-black mb-0">Past biling statements</p>
+                        </div>
+                        <div class="col-12 d-grid invoice-table p-2 table-bordered text-color-light-black uppercase">
+                            <p>Date</p>
+                            <p>Status</p>
+                            <p>Amount</p>
+                            <p></p>
+                        </div>
+                        <div class="col-12 d-grid invoice-table p-2 table-bordered text-base weight-500">
+                            <p>08/10/2021</p>
+                            <p>Paid</p>
+                            <p>65.88 USD</p>
+                            <p class="blue pointer">Download invoice</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  tab-content  justify-content-center">
+                    <!--                    <div class="col-12 box p-4">Plans</div>-->
+
+                    <div class="col-11 col-sm-5 col-xl-3 mt-3  p-4  plan-box dark-box mx-2 mx-sm-0">
+                        <div class="col-12 d-flex justify-content-around align-items-center flex-column bs-color-dark">
+                            <p class="text-3xl weight-500 ">BASIC</p>
+                            <p>Administration</p>
+                            <p class="d-flex align-items-start"><span>$</span> <span
+                                    class="mx-1 text-3xl weight-500 -mt-5">4</span> <span>99</span></p>
+                            <p>per seat / month</p>
+                            <p class="col-12">
+                                <span class="btn  bs-bg-color-dark bs-color-white ">UPGRADE </span>
+                            </p>
+                        </div>
+                        <div class="col-12 d-flex justify-content-start align-items-start flex-column px-1">
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Add time for others</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Hide time and pages</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Time audit</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Required fields</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Project templates</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Bulk edit</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Customize exports</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span> Historic rates</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Import timesheets</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Decimal format</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Edit profiles</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-11 col-sm-5 col-xl-3  mt-3  p-4  plan-box blue-box  mx-2 mx-sm-0 ">
+                        <div class="col-12 d-flex justify-content-around align-items-center flex-column bs-color-blue">
+                            <p class="text-3xl weight-500 ">STANDARD</p>
+                            <p>Timesheeting & Billing</p>
+                            <p class="d-flex align-items-start"><span>$</span> <span
+                                    class="mx-1 text-3xl weight-500 -mt-5">6</span> <span>99</span></p>
+                            <p>per seat / month</p>
+                            <p class="col-12">
+                                <span class="btn  bs-bg-color-blue bs-color-white ">UPGRADE </span>
+                            </p>
+                        </div>
+                        <div class="col-12 d-flex justify-content-start align-items-start flex-column px-1">
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>All BASIC features</span>
+                                <!--                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">-->
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Lock time</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Time approval</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Manager role</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Timesheet reminders</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Time rounding</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Task rates</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Invoicing</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>QuickBooks Integration</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Time off</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+
+
+                        </div>
+                    </div>
+                    <div class="col-11 col-sm-5 col-xl-3  mt-3  p-4  plan-box red-box mx-2 mx-sm-0">
+                        <div class="col-12 d-flex justify-content-around align-items-center flex-column bs-color-red">
+                            <p class="text-3xl weight-500 ">PRO</p>
+                            <p>Profit & Productivity</p>
+                            <p class="d-flex align-items-start"><span>$</span> <span
+                                    class="mx-1 text-3xl weight-500 -mt-5">9</span> <span>99</span></p>
+                            <p>per seat / month</p>
+                            <p class="col-12">
+                                <span class="btn  bs-bg-color-red bs-color-white ">UPGRADE </span>
+                            </p>
+                        </div>
+                        <div class="col-12 d-flex justify-content-start align-items-start flex-column px-1">
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>All STANDARD features</span>
+                                <!--                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">-->
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Labor cost & profit</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Scheduled reports</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Budget & estimates</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Alerts</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Force timer</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>GPS tracking</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span> Screenshots</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Custom fields</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Expenses</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Scheduling</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-11 col-sm-5 col-xl-3  mt-3  p-4  plan-box purple-box mx-2 mx-sm-0">
+                        <div class="col-12 d-flex justify-content-around align-items-center flex-column bs-color-purple">
+                            <p class="text-3xl weight-500 ">ENTERPRISE</p>
+                            <p>Control & Security</p>
+                            <p class="d-flex align-items-start"><span>$</span> <span
+                                    class="mx-1 text-3xl weight-500 -mt-5">14</span> <span>99</span></p>
+                            <p>per seat / month</p>
+                            <p class="col-12">
+                                <span class="btn  bs-bg-color-purple bs-color-white ">UPGRADE </span>
+                            </p>
+                        </div>
+                        <div class="col-12 d-flex justify-content-start align-items-start flex-column px-1">
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>All PRO features</span>
+                                <!--                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">-->
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Single sign-on (SSO)</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Custom subdomain</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Control accounts</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+                            <p class="d-flex justify-content-start align-items-center mb-1">
+                                <span>Audit log</span>
+                                <img class="open-info-window pointer ms-1" src="../images/info-9.svg" alt="info">
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="modal-block-center add-seats-modal d-none">
+        <div class="d-flex justify-content-between align-items-center p-3">
+            <div>
+                <p class=" text-lg weight-600 mb-0 dark-black">Add Seats</p>
+                <p class=" text-small weight-400 mb-0 text-color-light-black">Prices are in USD</p>
+            </div>
+
+            <img class="close-modal-seats pointer" src="../images/close.svg" alt="close">
+        </div>
+        <p class="col-12 stripe-gray mb-2 mt-0"></p>
+        <div class="col-12 text-small  text-color-light-black p-3 d-flex flex-column justify-content-center align-items-center ">
+            <p class="text-center text-color-base">Add seat (s) </p>
+            <div class="col-3 type-number-box">
+                <p class="number-input less d-flex justify-content-center align-items-center mb-0 mt-0"><span
+                        class="text-xl text-color-base mb-0 mt-0">-</span></p>
+                <input type="number" value="1" min="1" class="form-control text-center input-form">
+                <p class="number-input more d-flex justify-content-center align-items-center mb-0 mt-0"><span
+                        class="text-xl text-color-base mb-0 mt-0">+</span></p>
+            </div>
+        </div>
+
+        <div class="col-12 text-small  text-color-light-black p-3">
+            <p>Adding <span class="text-color-base weight-500">1</span> seat (s) will add <span
+                    class="text-color-base weight-500">$157.32</span> to your yearly bill starting November 17, 2022</p>
+            <p>An estimated prorated charge of <span class="text-color-base weight-500">$155.26</span> will be applied
+                today to your</p>
+            <p class="d-flex justify-content-between align-items-center">
+                <span class="weight-500 text-color-base">Master card *****7152</span>
+                <span class="blue pointer weight-400">Change Card</span></p>
+        </div>
+        <p class="col-12 stripe-gray my-2"></p>
+        <div class="col-12  my-2 d-flex justify-content-start align-items-start p-3">
+            <div class="form-check ps-0">
+                <input class="form-check-input-new" type="checkbox" value="">
+            </div>
+
+            <p class="text-extra-small   text-color-base text-start">
+                <span class=" weight-600">I have read and agree to the</span> <a href="#" class="blue weight-600"> Terms
+                of Use</a><br>
+                There are no refunds. Your subscription will renew automatically, and you will be charged in advance.
+                You may cancel at any time. The cancellation goes into effect at the start of your following billing
+                cycle.
+            </p>
+
+        </div>
+
+        <div class="col-12 d-flex justify-content-end  align-items-center px-3">
+            <p class="col-3 red weight-500 close-modal-seats pointer"> Cancel</p>
+            <p class="col-4">
+                <button class="btn btn-danger" disabled>Add Seats</button>
+            </p>
+        </div>
+    </div>
+    <div class="modal-block-center confirm-seats ">
+        <div class="d-flex justify-content-center align-items-center  flex-column p-3">
+            <p class=" text-lg weight-600 mb-0 dark-black text-center">Thank you! Your Organization’s plan has been
+                updated</p>
+            <p class="px-3 text-small dark-black text-center mt-4 mb-0">We have emailed your reciept to </p>
+            <p class="px-3 text-base dark-black text-center weight-500">email@domain.com</p>
+        </div>
+
+
+        <div class="col-12 d-flex justify-content-center  align-items-center px-3">
+            <p class="col-4">
+                <button class="btn btn-danger close-confirm-seats">Ok</button>
+            </p>
+        </div>
+    </div>
+    <div class="modal-block-center edit-invoice wide-modal d-none">
+        <div class="d-flex justify-content-between align-items-center p-3">
+            <p class=" text-lg weight-600 mb-0 dark-black">Invoice Information</p>
+            <img class="close-modal-edit-invoice pointer" src="../images/close.svg" alt="close">
+        </div>
+        <p class="col-12 stripe-gray my-3"></p>
+        <div class="col-12 px-4 inner-modal-block">
+            <div class="row ">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Company Name*</label>
+                    <input type="text" class="form-control" required
+                           value="Ultimate Software Inc.	 ">
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Send email to</label>
+                    <input type="email" class="form-control"
+                           value="firstname.secondname@email.com ">
+                </div>
+            </div>
+            <div class="row align-items-end">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Tax ID</label>
+                    <select class="form-select  ">
+                        <option selected disabled>-Select Country-</option>
+                        <option value="">State 3</option>
+                        <option value="">State 4</option>
+                        <option value="">State 5</option>
+                        <option value="">State 6</option>
+                    </select>
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label"></label>
+                    <input type="text" class="form-control"
+                           value="40161625789">
+                </div>
+            </div>
+            <div class="stripe-gray my-3"></div>
+            <div class="row">
+                <p class="text-base weight-600 mb-0 dark-black">Address</p>
+            </div>
+
+            <div class="row">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Address 1*</label>
+                    <textarea class="form-control" required>2345 viewcrest</textarea>
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Address 2*</label>
+                    <textarea class="form-control" placeholder="Type Address"></textarea>
+                </div>
+            </div>
+
+
+            <div class="row ">
+
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">City*</label>
+                    <input type="text" class="form-control" required
+                           value="Knoxville ">
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">State/ Province*</label>
+                    <select class="form-select  " required>
+                        <option selected>State 2</option>
+                        <option value="">State 3</option>
+                        <option value="">State 4</option>
+                        <option value="">State 5</option>
+                        <option value="">State 6</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Zip*</label>
+                    <input type="text" class="form-control" required
+                           value="3000 ">
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Country*</label>
+                    <select class="form-select  " required>
+                        <option selected>USA</option>
+                        <option value="">Country 2</option>
+                        <option value="">Country 3</option>
+                        <option value="">Country 4</option>
+                        <option value="">Country 5</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="stripe-gray mb-2"></div>
+        <div class="col-12 d-flex justify-content-end  align-items-center px-3">
+
+            <p class="col-3 red weight-500 close-modal-edit-invoice pointer"> Cancel</p>
+            <p class="col-4 col-md-3">
+                <button class="btn btn-danger">Save</button>
+            </p>
+        </div>
+    </div>
+    <div class="modal-block-center edit-payment wide-modal d-none">
+        <div class="d-flex justify-content-between align-items-center p-3">
+            <p class=" text-lg weight-600 mb-0 dark-black">Payment Information</p>
+            <img class="close-modal-edit-payment pointer" src="../images/close.svg" alt="close">
+        </div>
+        <p class="col-12 stripe-gray my-3"></p>
+        <div class="col-12 px-4 inner-modal-block">
+            <div class="row ">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Card Number*</label>
+                    <input type="text" class="form-control" required
+                           placeholder="1234 1234 1234 1234 ">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mb-3  col-12 col-md-3  mt-2">
+                    <label class="form-label">Expiry Date*</label>
+                    <input type="date" class="form-control" required
+                           placeholder="">
+                </div>
+                <div class="mb-3  col-12 col-md-3  mt-2">
+                    <label class="form-label">CVV*</label>
+                    <input type="text" class="form-control" required
+                           placeholder="CVV*">
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Cardholder Name*</label>
+                    <input type="text" class="form-control" required
+                           value="Russel Peters">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Street *</label>
+                    <input type="text" class="form-control" required
+                           value="3812 Some Street ">
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">City*</label>
+                    <input type="text" class="form-control" required
+                           value="Dallas">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Zip*</label>
+                    <input type="text" class="form-control" required
+                           value="3000 ">
+                </div>
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">State/ Province*</label>
+                    <select class="form-select  " required>
+                        <option selected>State 2</option>
+                        <option value="">State 3</option>
+                        <option value="">State 4</option>
+                        <option value="">State 5</option>
+                        <option value="">State 6</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mb-3  col-12 col-md-6  mt-2">
+                    <label class="form-label">Country*</label>
+                    <select class="form-select  " required>
+                        <option selected>USA</option>
+                        <option value="">Country 2</option>
+                        <option value="">Country 3</option>
+                        <option value="">Country 4</option>
+                        <option value="">Country 5</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="stripe-gray mb-2"></div>
+        <div class="w-full bg-red-opacity mx-3 my-2">
+            <p class="text-extra-small p-2 text-color-base text-center">Once you add payment information, you'll be
+                charged for all your open invoices</p>
+        </div>
+        <div class="w-full  mx-3 my-2 d-flex justify-content-start align-items-start">
+            <div class="form-check ">
+                <input class="form-check-input-new" type="checkbox" value="">
+            </div>
+
+            <p class="text-extra-small   text-color-base text-start">
+                <span class=" weight-600">I have read and agree to the</span> <a href="#" class="blue weight-600"> Terms
+                of Use</a><br>
+                There are no refunds. Your subscription will renew automatically, and you will be charged in advance.
+                You may cancel at any time. The cancellation goes into effect at the start of your following billing
+                cycle.
+            </p>
+
+        </div>
+        <div class="col-12 d-flex justify-content-end  align-items-center px-3">
+            <p class="col-3 red weight-500 close-modal-edit-payment pointer"> Cancel</p>
+            <p class="col-4 col-md-3">
+                <button class="btn btn-danger" disabled>Save</button>
+            </p>
+        </div>
+
+    </div>
+
+
+    </div>
+
+</section>
+<div class="success-modal d-flex justify-content-around align-items-center">
+    <img src="../images/success.svg" alt="success">
+    <p class="green text-small  mb-0">Invoice Information has been edited</p>
+    <img class="close-success pointer" src="../images/close-green.svg" alt="close-modal">
+</div>
+
+
+<div class="black-background-full d-none"></div>
+
+<div class="modal-block-center wide-modal info-window d-none p-4 ">
+    <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-lg-7 ">
+            <p class="text-3xl bs-color-dark">TITLE</p>
+            <p class="text-base bs-color-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+                blanditiis consequatur esse fuga id illo
+                impedit itaque laboriosam minima molestias!
+            </p>
+        </div>
+        <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end">
+            <div class="info-window-image-box">
+                <div class="info-window-inner-image-box">
+                    <img src="../images/test-info-image.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="stripe-gray my-3 col-12"></div>
+
+        <div class="col-12 d-flex justify-content-end  align-items-center px-3">
+            <p class="col-6 col-sm-4   col-lg-2 blue weight-500 close-info-window pointer text-end me-4"> Close</p>
+            <p class="col-6 col-sm-4  col-lg-2 ">
+                <button class="btn bs-bg-color-blue bs-color-white">LEARN MORE</button>
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    // size of info-window-image-box
+    // document.addEventListener('DOMContentLoaded',()=>{
+    //     imageBoxChanger()
+    // })
+    // window.onresize = ()=>{
+    //     imageBoxChanger()
+    // }
+    // function imageBoxChanger(){
+    //     let imageBox = document.querySelector('.info-window-image-box')
+    //     let imageInnerBox = document.querySelector('.info-window-inner-image-box')
+    //     let imageBoxWidth = imageBox.getBoundingClientRect().width
+    //     let imageInnerBoxWidth = imageBoxWidth -10
+    //         imageBox.style.cssText = `height: ${imageBoxWidth}px`
+    //         imageInnerBox.style.cssText = `height: ${imageInnerBoxWidth}px; width:${imageInnerBoxWidth}px`
+    //
+    // }
+    // open info window
+    const infoWindows = document.querySelectorAll('.open-info-window')
+    infoWindows.forEach((el) => {
+        el.addEventListener('click', () => {
+
+            document.querySelector('.info-window').classList.toggle('d-none')
+            setTimeout(() => {
+
+            }, 100)
+            document.querySelector('.black-background-full').classList.toggle('d-none')
+        })
+    })
+    //close info window
+    document.querySelector('.close-info-window').addEventListener('click', () => {
+        document.querySelector('.info-window').classList.toggle('d-none')
+        document.querySelector('.black-background-full').classList.toggle('d-none')
+    })
+
+    // open tabs
+    const tabsTitle = document.querySelectorAll('.tab-title')
+    const tabs = document.querySelectorAll('.tab-content')
+    for (let i = 0; i < tabsTitle.length; i++) {
+        tabsTitle[i].addEventListener('click', () => {
+            tabsTitle.forEach((el) => {
+                el.classList.remove('active-tabs-title')
+            })
+            tabs.forEach((el) => {
+                el.classList.remove('active-tab')
+            })
+            tabsTitle[i].classList.add('active-tabs-title')
+            tabs[i].classList.add('active-tab')
+
+        })
+    }
+
+    // open close edit invoice-modal
+    document.querySelector('.open-edit-invoice-modal').addEventListener('click', () => {
+        document.querySelector('.edit-invoice').classList.remove('d-none')
+    })
+    const invoiceModalClose = document.querySelectorAll('.close-modal-edit-invoice')
+    invoiceModalClose.forEach((el) => {
+        el.addEventListener('click', () => {
+            document.querySelector('.edit-invoice').classList.add('d-none')
+        })
+    })
+    // open close edit payment-modal
+    document.querySelector('.open-edit-payment-modal').addEventListener('click', () => {
+        document.querySelector('.edit-payment').classList.remove('d-none')
+    })
+    const payModalClose = document.querySelectorAll('.close-modal-edit-payment')
+    payModalClose.forEach((el) => {
+        el.addEventListener('click', () => {
+            document.querySelector('.edit-payment').classList.add('d-none')
+        })
+    })
+
+    //open close modal window seats
+    document.querySelector('.open-seats-modal').addEventListener('click', () => {
+        document.querySelector('.add-seats-modal').classList.remove('d-none')
+
+    })
+    const closeSeats = document.querySelectorAll('.close-modal-seats')
+    closeSeats.forEach((el) => {
+        el.addEventListener('click', () => {
+            document.querySelector('.add-seats-modal').classList.add('d-none')
+        })
+    })
+
+    //close success modal
+    document.querySelector('.close-success').addEventListener('click', (e) => {
+        e.target.parentElement.classList.add('d-none')
+    })
+    // close confirm-seats
+    document.querySelector('.close-confirm-seats').addEventListener('click', () => {
+        document.querySelector('.confirm-seats').classList.add('d-none')
+    })
+
+    // + - seats to form
+    let seatsForm = document.querySelector('.input-form')
+    let seatsValue = seatsForm.value
+    document.querySelector('.less').addEventListener('click', () => {
+        if (seatsForm.value > 1) seatsForm.value--
+    })
+    document.querySelector('.more').addEventListener('click', () => {
+        seatsForm.value++
+    })
+</script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

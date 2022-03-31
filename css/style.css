@@ -191,6 +191,7 @@ a {
 .full-for-mobile {
   width: 500vw;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .tabs-big-button-right {
@@ -198,6 +199,33 @@ a {
   right: 0;
   bottom: -63px;
   cursor: pointer;
+  z-index: 5;
+}
+
+.border-none {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.border-none:active {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.border-none:focus {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.light-theme .bg-light-gray {
+  background: #f8f9fa !important;
+}
+.dark-theme .bg-light-gray {
+  background: #f8f9fa !important;
 }
 
 .tabs-big-button-left {
@@ -205,6 +233,7 @@ a {
   left: 0;
   bottom: -63px;
   cursor: pointer;
+  z-index: 5;
 }
 
 .absolute-sm {
